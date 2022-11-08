@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+html,
+body,
+main,
+#root {
+  height: 100%;
+}
+
+.background {
+  background-color: hsl(235, 21%, 11%);
+  height: 100%;
+}
+.top-image {
+  width: 100%;
+  height: 200px;
+}
+.main-container {
+  background-color: transparent;
+  max-width: 430px;
+  width: 90%;
+  height: fit-content;
+  margin: auto;
+  position: relative;
+  top: -130px;
+}
+.container {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+  border-radius: 5px;
+  display: flex;
+  font-size: 0.99em;
+  padding: 15px;
+}
+.light-container {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
+}
+.main-header {
+  background-color: transparent;
+  padding: 0%;
+  margin-bottom: 0px;
+}
+.header {
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  flex: 1;
+  letter-spacing: 10px;
+}
+.new-input {
+  margin: 35px 0 15px;
+}
+.new-input input[type="text"] {
+  margin-left: 5px;
+  flex: 1;
+  caret-color: hsl(220, 98%, 61%);
+}
+input {
+  background-color: transparent;
+  color: hsl(234, 39%, 85%);
+  outline: none;
+  border: none;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid hsl(233, 14%, 35%);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.task {
+  border-radius: 0;
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+}
+.main-container .task:nth-child(3) {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.task label {
+  flex: 1;
+  cursor: pointer;
+}
+.task.light-container {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.footer-nav {
+  position: relative;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.footer-nav span {
+  color: hsl(233, 14%, 35%);
+}
+.status {
+  display: flex;
+  gap: 15px;
+}
+.status span {
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .main-container {
+    min-width: 90%;
+  }
+  .container {
+    font-size: 0.77em;
+  }
+  .status {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    background-color: inherit;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 0;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+}
