@@ -34,14 +34,12 @@ function App() {
       >
         <picture>
           <source
-            srcSet={
-              isLight ? "../bg-mobile-light.jpg" : "../bg-mobile-dark.jpg"
-            }
+            srcSet={isLight ? "bg-mobile-light.jpg" : "bg-mobile-dark.jpg"}
             media="(max-width: 500px)"
           />
           <img
             className="top-image"
-            src={isLight ? "../bg-desktop-light.jpg" : "../bg-desktop-dark.jpg"}
+            src={isLight ? "bg-desktop-light.jpg" : "bg-desktop-dark.jpg"}
           />
         </picture>
 
