@@ -50,6 +50,11 @@ function Task(props) {
         src="icon-cross.svg"
         name={props.task}
         onClick={(e) => {
+          setAllTasks(
+            allTasks.filter((task) => {
+              return task.id != props.id;
+            })
+          );
           setTracker(
             tracker.filter((task) => {
               return task.id != props.id;
