@@ -6,7 +6,7 @@ function Header() {
 
   return (
     <div className="container main-header">
-      <p className="header">TODO</p>
+      <h1 className="header">TODO</h1>
       <img
         src={`icon-${isLight ? `moon.svg` : `sun.svg`} `}
         onClick={() => setIsLight(!isLight)}

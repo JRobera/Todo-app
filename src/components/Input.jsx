@@ -40,7 +40,11 @@ function Input() {
 
   return (
     <div className={`container new-input ${isLight && `light-container`}`}>
+      <label hidden for="addtodo">
+        Add
+      </label>
       <input
+        id="addtodo"
         type="checkbox"
         style={{
           backgroundImage:

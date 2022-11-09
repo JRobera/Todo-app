@@ -40,6 +40,7 @@ function App() {
           <img
             className="top-image"
             src={isLight ? "bg-desktop-light.jpg" : "bg-desktop-dark.jpg"}
+            alt="backgroud image"
           />
         </picture>
 
