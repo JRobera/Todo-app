@@ -40,7 +40,7 @@ function Input() {
 
   return (
     <div className={`container new-input ${isLight && `light-container`}`}>
-      <label hidden for="addtodo">
+      <label hidden htmlFor="addtodo">
         Add
       </label>
       <input
@@ -54,7 +54,7 @@ function Input() {
         onMouseOver={handleMouseOver}
         onMouseOut={handleHouseOut}
         onChange={(e) => {
-          newTask !== "" &&
+          if (newTask !== "") {
             setAllTasks(() => {
               const task = {
                 id:
@@ -66,8 +66,7 @@ function Input() {
               };
               return [...allTasks, task];
             });
-          //Create copy state
-          newTask !== "" &&
+            //Create copy state
             setTracker(() => {
               const task = {
                 id:
@@ -77,7 +76,8 @@ function Input() {
               };
               return [...tracker, task];
             });
-          setNewTask("");
+            setNewTask("");
+          }
         }}
       />
 
@@ -90,6 +90,36 @@ function Input() {
         onBlur={handleFocuseOut}
         onChange={(e) => {
           return setNewTask(e.target.value);
+        }}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            if (newTask !== "") {
+              setAllTasks(() => {
+                const task = {
+                  id:
+                    allTasks.length === 0
+                      ? 1
+                      : allTasks[allTasks.length - 1].id + 1,
+                  taskName: newTask,
+                  completed: false,
+                };
+                return [...allTasks, task];
+              });
+              //Create copy state
+              setTracker(() => {
+                const task = {
+                  id:
+                    tracker.length === 0
+                      ? 1
+                      : tracker[tracker.length - 1].id + 1,
+                  taskName: newTask,
+                  completed: false,
+                };
+                return [...tracker, task];
+              });
+              setNewTask("");
+            }
+          }
         }}
       />
     </div>
